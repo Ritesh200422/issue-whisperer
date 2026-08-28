@@ -113,6 +113,12 @@ def get_config(config_path: str | None = None) -> Config:
     if os.environ.get("GITHUB_TOKEN"):
         github["token"] = os.environ["GITHUB_TOKEN"]
 
+    if os.environ.get("CORS_ORIGINS"):
+        origins = [o.strip() for o in os.environ["CORS_ORIGINS"].split(",")]
+        raw.setdefault("server", {})["cors_origins"] = origins
+    elif os.environ.get("ENVIRONMENT") == "production":
+        raw.setdefault("server", {})["cors_origins"] = ["*"]
+
     if os.environ.get("LOG_LEVEL"):
         raw.setdefault("app", {})["log_level"] = os.environ["LOG_LEVEL"]
 
