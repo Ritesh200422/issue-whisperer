@@ -3,12 +3,14 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import sys
 from pathlib import Path
 
 # Add backend directory to path so imports work
-backend_dir = Path(__file__).resolve().parent.parent / "backend"
+# File lives at backend/baseline/run_baseline.py → parent = backend/baseline, parent.parent = backend/
+backend_dir = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(backend_dir))
 
 import click

@@ -3,7 +3,7 @@ from __future__ import annotations
 
 import json
 import logging
-from datetime import datetime
+from datetime import datetime, timezone
 from pathlib import Path
 
 from agents.prompts import VERIFIER_SYSTEM_PROMPT, VERIFIER_USER_TEMPLATE
@@ -130,7 +130,7 @@ class VerifierAgent:
         if not self.config.trajectories.enabled:
             return
             
-        timestamp = datetime.utcnow().isoformat()
+        timestamp = datetime.now(timezone.utc).isoformat()
         trajectory_data = {
             "timestamp": timestamp,
             "agent": "VerifierAgent",
@@ -149,7 +149,7 @@ class VerifierAgent:
             "final_verification": validated.model_dump()
         }
         
-        file_path = self.trajectory_dir / f"verifier_{new_issue.number}_vs_{candidate_issue.number}_{int(datetime.utcnow().timestamp())}.json"
+        file_path = self.trajectory_dir / f"verifier_{new_issue.number}_vs_{candidate_issue.number}_{int(datetime.now(timezone.utc).timestamp())}.json"
         try:
             with open(file_path, "w", encoding="utf-8") as f:
                 json.dump(trajectory_data, f, indent=2, ensure_ascii=False)
