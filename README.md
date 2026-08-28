@@ -1,3 +1,4 @@
+
 # Issue Whisperer
 
 > An AI agent that detects duplicate GitHub issues by retrieving historical
@@ -147,3 +148,6 @@ backend\.venv\Scripts\pytest
 
 1. **Hot Take**: Traditional AI agents write comments autonomously, leading to clutter and false alarms. A strict verifier paired with programmatic evidence checking completely halts AI hallucinations before it ever hits a human's desk.
 2. **Main Failure Mode**: Very short issue reports (e.g., "It doesn't work") lack semantic depth, causing retrieval accuracy to degrade. Developers should enforce issue templates.
+
+### Improvement Changelog
+We maintain a detailed log of our architectural improvements and feature additions in [CHANGELOG.md](./CHANGELOG.md).
