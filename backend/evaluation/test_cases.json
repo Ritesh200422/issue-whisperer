@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "type": "real_duplicate",
+    "title": "Application crashes when uploading files larger than 100MB",
+    "body": "Steps to reproduce:\n1. Go to web UI\n2. Select 120MB CSV file\n3. Click upload\n4. Server responds with 500 error and crashes.",
+    "expected_is_duplicate": true,
+    "expected_duplicate_of": 1,
+    "expected_label": "bug"
+  },
+  {
+    "id": 2,
+    "type": "real_duplicate",
+    "title": "CSV file import memory leak in web client UI",
+    "body": "When importing a large CSV file, memory usage grows continuously until the browser tab crashes. This happens during parsing in the web thread.",
+    "expected_is_duplicate": true,
+    "expected_duplicate_of": 1,
+    "expected_label": "bug"
+  },
+  {
+    "id": 3,
+    "type": "real_duplicate",
+    "title": "FastAPI backend returns 500 on large payload upload",
+    "body": "The server crashes and throws a PayloadTooLarge exception when files exceed 100MB.",
+    "expected_is_duplicate": true,
+    "expected_duplicate_of": 1,
+    "expected_label": "bug"
+  },
+  {
+    "id": 4,
+    "type": "similar_but_not_duplicate",
+    "title": "Add Excel xlsx file import support",
+    "body": "Currently the application only supports CSV file uploads. We should add XLSX Excel file support to make it easier for users.",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "feature"
+  },
+  {
+    "id": 5,
+    "type": "similar_but_not_duplicate",
+    "title": "CSV export downloads are slow for large tables",
+    "body": "Downloading reports takes too long. We should optimize the SQL queries used to build the CSV file before downloading.",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "bug"
+  },
+  {
+    "id": 6,
+    "type": "similar_but_not_duplicate",
+    "title": "Improve drag and drop file upload styling",
+    "body": "The border of the dropzone is grey. It should highlight blue when a file is dragged over it.",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "feature"
+  },
+  {
+    "id": 7,
+    "type": "label_accuracy",
+    "title": "Update installation guidelines for Windows in README",
+    "body": "Add instructions on how to set up the environment variables on Windows systems using PowerShell.",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "docs"
+  },
+  {
+    "id": 8,
+    "type": "label_accuracy",
+    "title": "How do I configure the server port?",
+    "body": "I want to change the port from 8000 to 8080. Which configuration file should I edit?",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "question"
+  },
+  {
+    "id": 9,
+    "type": "historical_duplicate_far_back",
+    "title": "Web UI file upload crashes",
+    "body": "Uploading files crashes the web server instantly.",
+    "expected_is_duplicate": true,
+    "expected_duplicate_of": 1,
+    "expected_label": "bug"
+  },
+  {
+    "id": 10,
+    "type": "adversarial",
+    "title": "Large payload upload crashes during CSV validation",
+    "body": "When uploading a large file, the CSV validator throws a schema mismatch error. The server stays up and returns a 400 Bad Request, not a 500 crash.",
+    "expected_is_duplicate": false,
+    "expected_duplicate_of": null,
+    "expected_label": "bug"
+  }
+]
