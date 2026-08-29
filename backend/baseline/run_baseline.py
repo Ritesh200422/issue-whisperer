@@ -8,18 +8,17 @@ import os
 import sys
 from pathlib import Path
 
-# Add backend directory to path so imports work
-# File lives at backend/baseline/run_baseline.py → parent = backend/baseline, parent.parent = backend/
-backend_dir = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(backend_dir))
+# Add repo root to path so `backend.*` imports work when run as a standalone script
+repo_root = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(repo_root))
 
 import click
 from dotenv import load_dotenv
 
-from agents.prompts import BASELINE_SYSTEM_PROMPT, BASELINE_USER_TEMPLATE
-from models.triage import TriageModel
-from services.llm_service import LLMService
-from logging_config import setup_logging
+from backend.agents.prompts import BASELINE_SYSTEM_PROMPT, BASELINE_USER_TEMPLATE
+from backend.models.triage import TriageModel
+from backend.services.llm_service import LLMService
+from backend.logging_config import setup_logging
 
 load_dotenv()
 setup_logging("INFO")

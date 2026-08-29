@@ -2,10 +2,10 @@
 from __future__ import annotations
 
 import logging
-from models.issue import IssueModel
-from tools.embedding_index import EmbeddingIndex
-from tools.embedding_model import EmbeddingModel
-from services.config_service import get_config
+from backend.models.issue import IssueModel
+from backend.tools.embedding_index import EmbeddingIndex
+from backend.tools.embedding_model import EmbeddingModel
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 

@@ -8,8 +8,8 @@ from pathlib import Path
 from typing import Any
 from github import Github, GithubException
 
-from models.issue import IssueModel, RepositoryModel
-from services.config_service import get_config
+from backend.models.issue import IssueModel, RepositoryModel
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 

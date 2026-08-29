@@ -6,11 +6,11 @@ import logging
 from datetime import datetime
 from pathlib import Path
 
-from agents.prompts import TRIAGE_SYSTEM_PROMPT, TRIAGE_USER_TEMPLATE
-from models.issue import IssueModel
-from models.triage import TriageModel
-from services.config_service import get_config
-from services.llm_service import LLMService
+from backend.agents.prompts import TRIAGE_SYSTEM_PROMPT, TRIAGE_USER_TEMPLATE
+from backend.models.issue import IssueModel
+from backend.models.triage import TriageModel
+from backend.services.config_service import get_config
+from backend.services.llm_service import LLMService
 
 logger = logging.getLogger(__name__)
 

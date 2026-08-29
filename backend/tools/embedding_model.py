@@ -5,7 +5,7 @@ import logging
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
-from services.config_service import get_config
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 

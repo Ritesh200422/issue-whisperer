@@ -8,17 +8,17 @@ from pathlib import Path
 import sys
 import time
 
-# Resolve backend directory correctly
-backend_dir = Path(__file__).resolve().parent.parent
-sys.path.insert(0, str(backend_dir))
+# Resolve repo root so `backend.*` imports work when run as a standalone script
+repo_root = Path(__file__).resolve().parent.parent.parent
+sys.path.insert(0, str(repo_root))
 
-from agents.triage_agent import TriageAgent
-from agents.verifier_agent import VerifierAgent
-from tools.retrieval import IssueRetrieval
-from models.issue import IssueModel
-from evaluation.metrics import calculate_metrics
-from logging_config import setup_logging
-from services.config_service import get_config
+from backend.agents.triage_agent import TriageAgent
+from backend.agents.verifier_agent import VerifierAgent
+from backend.tools.retrieval import IssueRetrieval
+from backend.models.issue import IssueModel
+from backend.evaluation.metrics import calculate_metrics
+from backend.logging_config import setup_logging
+from backend.services.config_service import get_config
 
 setup_logging("INFO")
 logger = logging.getLogger(__name__)

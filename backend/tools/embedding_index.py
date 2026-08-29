@@ -7,8 +7,8 @@ from pathlib import Path
 import faiss
 import numpy as np
 
-from models.issue import IssueModel
-from services.config_service import get_config
+from backend.models.issue import IssueModel
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 

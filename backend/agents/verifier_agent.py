@@ -6,12 +6,12 @@ import logging
 from datetime import datetime, timezone
 from pathlib import Path
 
-from agents.prompts import VERIFIER_SYSTEM_PROMPT, VERIFIER_USER_TEMPLATE
-from models.issue import IssueModel
-from models.triage import TriageModel
-from models.verification import VerificationModel
-from services.config_service import get_config
-from services.llm_service import LLMService
+from backend.agents.prompts import VERIFIER_SYSTEM_PROMPT, VERIFIER_USER_TEMPLATE
+from backend.models.issue import IssueModel
+from backend.models.triage import TriageModel
+from backend.models.verification import VerificationModel
+from backend.services.config_service import get_config
+from backend.services.llm_service import LLMService
 
 logger = logging.getLogger(__name__)
 

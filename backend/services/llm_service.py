@@ -4,7 +4,7 @@ from __future__ import annotations
 import logging
 from openai import OpenAI
 
-from services.config_service import get_config
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 

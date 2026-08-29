@@ -9,10 +9,10 @@ from pydantic import BaseModel
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
-from logging_config import setup_logging
-from services.config_service import get_config
-from services.triage_service import TriageService
-from services.approval_service import ApprovalService
+from backend.logging_config import setup_logging
+from backend.services.config_service import get_config
+from backend.services.triage_service import TriageService
+from backend.services.approval_service import ApprovalService
 
 logger = logging.getLogger(__name__)
 

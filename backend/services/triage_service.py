@@ -3,13 +3,13 @@ from __future__ import annotations
 
 import logging
 from pathlib import Path
-from agents.triage_agent import TriageAgent
-from agents.verifier_agent import VerifierAgent
-from models.issue import IssueModel
-from models.triage import TriageModel
-from models.verification import VerificationModel
-from tools.retrieval import IssueRetrieval
-from services.config_service import get_config
+from backend.agents.triage_agent import TriageAgent
+from backend.agents.verifier_agent import VerifierAgent
+from backend.models.issue import IssueModel
+from backend.models.triage import TriageModel
+from backend.models.verification import VerificationModel
+from backend.tools.retrieval import IssueRetrieval
+from backend.services.config_service import get_config
 
 logger = logging.getLogger(__name__)
 
