@@ -1,6 +1,6 @@
 """Configuration service — loads config.yaml and validates with Pydantic."""
 from __future__ import annotations
-
+from dotenv import load_dotenv
 import os
 from functools import lru_cache
 from pathlib import Path
@@ -76,7 +76,7 @@ class Config(BaseModel):
     trajectories: TrajectoriesConfig = Field(default_factory=TrajectoriesConfig)
     paths: PathsConfig = Field(default_factory=PathsConfig)
 
-
+load_dotenv()
 @lru_cache(maxsize=1)
 def get_config(config_path: str | None = None) -> Config:
     """Load config from YAML, then overlay environment variable overrides.
