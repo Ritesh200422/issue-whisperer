@@ -3,27 +3,25 @@ fastapi==0.115.6
 uvicorn[standard]==0.32.1
 python-dotenv==1.0.1
 PyYAML==6.0.2
-pydantic==2.10.4
+pydantic>=2.11,<3
 httpx==0.28.1
 
-# ── GitHub API ────────────────────────────────────────────────────────────────
+# ── GitHub API ───────────────────────────────────────────────────────────────
 PyGithub==2.5.0
 
-# ── Embeddings & Vector Search ────────────────────────────────────────────────
+# ── Embeddings & Vector Search ──────────────────────────────────────────────
 sentence-transformers==3.3.1
-faiss-cpu==1.15.0
+faiss-cpu>=1.10,<2
 numpy==1.26.4
 
-# ── LLM provider abstraction ──────────────────────────────────────────────────
-# openai client is used for ALL OpenAI-compatible providers:
-# Ollama (/v1 endpoint), OpenRouter, and any future provider.
+# ── LLM provider abstraction ─────────────────────────────────────────────────
 openai==1.57.4
 
-# ── Testing ───────────────────────────────────────────────────────────────────
+# ── Testing ──────────────────────────────────────────────────────────────────
 pytest==8.3.4
 pytest-asyncio==0.24.0
 
-# ── CLI / utilities ───────────────────────────────────────────────────────────
+# ── CLI / utilities ──────────────────────────────────────────────────────────
 rich==13.9.4
 click==8.1.8
 tqdm==4.67.1
