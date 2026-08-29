@@ -64,6 +64,17 @@ def create_app() -> FastAPI:
 
     # ── Routes ────────────────────────────────────────────────────────────────
 
+    @app.get("/", tags=["system"])
+    async def root() -> dict:
+        """Root endpoint."""
+        return {
+            "status": "online",
+            "app": cfg.app.name,
+            "version": cfg.app.version,
+            "docs": "/docs",
+            "health": "/health"
+        }
+
     @app.get("/health", tags=["system"])
     async def health() -> dict:
         """Return backend health status."""
